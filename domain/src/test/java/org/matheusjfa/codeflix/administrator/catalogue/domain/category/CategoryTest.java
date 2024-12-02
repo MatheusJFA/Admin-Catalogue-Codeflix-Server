@@ -226,14 +226,18 @@ public class CategoryTest {
 
         final var category = Category.create("Test Category", "Test Category Description", true);
 
+        final var updatedAt = category.getUpdatedAt();
+
         // Act
-        category.update(expectedName, expectedDescription, expectedIsActive);
+        final var updatedCategory = category.update(expectedName, expectedDescription, expectedIsActive);
 
         // Assert
         Assertions.assertEquals(expectedName, category.getName());
         Assertions.assertEquals(expectedDescription, category.getDescription());
         Assertions.assertEquals(expectedIsActive, category.isActive());
         Assertions.assertNotNull(category.getUpdatedAt());
+
+        Assertions.assertTrue(updatedAt.isBefore(updatedCategory.getUpdatedAt()));
     }
 
     @Test
@@ -245,8 +249,10 @@ public class CategoryTest {
         final var expectedDescription = "Category Description";
         final var expectedIsActive = true;
 
+        final var updatedAt = category.getUpdatedAt();
+
         // Act
-        category.update(expectedName, expectedDescription, expectedIsActive);
+        final var updatedCategory = category.update(expectedName, expectedDescription, expectedIsActive);
 
         // Assert
         Assertions.assertEquals(expectedName, category.getName());
@@ -254,6 +260,8 @@ public class CategoryTest {
         Assertions.assertEquals(expectedIsActive, category.isActive());
         Assertions.assertNotNull(category.getUpdatedAt());
         Assertions.assertNull(category.getDeletedAt());
+
+        Assertions.assertTrue(updatedAt.isBefore(updatedCategory.getUpdatedAt()));
     }
 
     @Test
@@ -265,8 +273,10 @@ public class CategoryTest {
         final var expectedDescription = "Category Description";
         final var expectedIsActive = false;
 
+        final var updatedAt = category.getUpdatedAt();
+
         // Act
-        category.update(expectedName, expectedDescription, expectedIsActive);
+        final var updatedCategory = category.update(expectedName, expectedDescription, expectedIsActive);
 
         // Assert
         Assertions.assertEquals(expectedName, category.getName());
@@ -274,5 +284,6 @@ public class CategoryTest {
         Assertions.assertEquals(expectedIsActive, category.isActive());
         Assertions.assertNotNull(category.getUpdatedAt());
         Assertions.assertNotNull(category.getDeletedAt());
+        Assertions.assertTrue(updatedAt.isBefore(updatedCategory.getUpdatedAt()));
     }
 }
