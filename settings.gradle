@@ -1,0 +1,5 @@
+rootProject.name = 'CodeFlix-Admin-Server'
+include 'infrastructure'
+include 'application'
+include 'domain'
+
