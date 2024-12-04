@@ -6,10 +6,10 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class CategoryID extends Identifier {
-    private final String id;
+    private final String value;
 
-    public CategoryID(final String id) {
-        this.id = Objects.requireNonNull(id);
+    private CategoryID(final String id) {
+        this.value = Objects.requireNonNull(id);
     }
 
     public static CategoryID generate() {
@@ -24,20 +24,20 @@ public class CategoryID extends Identifier {
         return new CategoryID(id);
     }
 
-    public String getId() {
-        return id;
+    public String getValue() {
+        return value;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         final CategoryID that = (CategoryID) o;
-        return Objects.equals(id, that.id);
+        return Objects.equals(value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(value);
     }
 }
 

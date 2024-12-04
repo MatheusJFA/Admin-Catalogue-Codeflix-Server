@@ -6,7 +6,8 @@ import org.matheusjfa.codeflix.administrator.catalogue.domain.exceptions.DomainE
 import org.matheusjfa.codeflix.administrator.catalogue.domain.validation.handler.ThrowsValidationHandler;
 
 public class CategoryTest {
-    /** Test Scenarios
+    /**
+     * Test Scenarios
      * 1) Should create a category
      * 2) Shouldn't create a category with null name
      * 3) Shouldn't create a category with blank name
