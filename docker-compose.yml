@@ -1,0 +1,17 @@
+services:
+  mysql:
+    container_name: codeflix-admin-mysql
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=8XxKfy5XUW9Ya9juBRyRU2N7kVNolTZ
+      - MYSQL_DATABASE=codeflix
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - "3306:3306"
+    networks:
+      - codeflix-network
+
+networks:
+  codeflix-network:
+    driver: bridge

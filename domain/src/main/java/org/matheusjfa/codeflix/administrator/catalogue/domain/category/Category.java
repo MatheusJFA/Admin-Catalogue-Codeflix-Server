@@ -4,6 +4,7 @@ import org.matheusjfa.codeflix.administrator.catalogue.domain.AggregateRoot;
 import org.matheusjfa.codeflix.administrator.catalogue.domain.validation.ValidationHandler;
 
 import java.time.Instant;
+import java.util.Objects;
 
 public class Category extends AggregateRoot<CategoryID> implements Cloneable  {
     private String name;
@@ -26,8 +27,8 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable  {
         this.name = name;
         this.description = description;
         this.active = active;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.createdAt = Objects.requireNonNull(createdAt, "'created at' must not be null");
+        this.updatedAt = Objects.requireNonNull(updatedAt, "'updated at' must not be null");
         this.deletedAt = deletedAt;
     }
 
@@ -51,7 +52,15 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable  {
             final Instant updatedAt,
             final Instant deletedAt
     ) {
-        return new Category(id, name, description, isActive, createdAt, updatedAt, deletedAt);
+        return new Category(
+                id,
+                name,
+                description,
+                isActive,
+                createdAt,
+                updatedAt,
+                deletedAt
+        );
     }
 
     public static Category with(final Category category) {

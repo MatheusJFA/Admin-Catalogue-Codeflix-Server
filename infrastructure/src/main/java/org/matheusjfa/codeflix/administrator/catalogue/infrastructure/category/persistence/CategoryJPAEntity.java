@@ -11,7 +11,7 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "category")
-public class CategoryEntityJPA {
+public class CategoryJPAEntity {
     @Id
     private String id;
 
@@ -33,9 +33,9 @@ public class CategoryEntityJPA {
     @Column(name = "deleted_at", nullable = true, columnDefinition = "DATETIME(6)")
     private Instant deletedAt;
 
-    public CategoryEntityJPA() {}
+    public CategoryJPAEntity() {}
 
-    private CategoryEntityJPA(
+    private CategoryJPAEntity(
             final String id,
             final String name,
             final String description,
@@ -53,8 +53,8 @@ public class CategoryEntityJPA {
         this.deletedAt = deletedAt;
     }
 
-    public static CategoryEntityJPA from(final Category category) {
-        return new CategoryEntityJPA(
+    public static CategoryJPAEntity from(final Category category) {
+        return new CategoryJPAEntity(
                 category.getId().getValue(),
                 category.getName(),
                 category.getDescription(),
@@ -132,5 +132,4 @@ public class CategoryEntityJPA {
     public void setDeletedAt(Instant deletedAt) {
         this.deletedAt = deletedAt;
     }
-
 }

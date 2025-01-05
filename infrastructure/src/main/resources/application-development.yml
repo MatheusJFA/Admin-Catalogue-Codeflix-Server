@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     username: root
-    password: CyT*357BeKu#
+    password: 8XxKfy5XUW9Ya9juBRyRU2N7kVNolTZ
     url: jdbc:h2:mem:codeflix;MODE=MYSQL;DATABASE_TO_LOWER=TRUE
   jpa:
     defer-datasource-initialization: true
