@@ -4,7 +4,7 @@ import org.hibernate.PropertyValueException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.matheusjfa.codeflix.administrator.catalogue.domain.category.Category;
-import org.matheusjfa.codeflix.administrator.catalogue.infrastructure.MySQLGatewayTest;
+import org.matheusjfa.codeflix.administrator.catalogue.MySQLGatewayTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 
@@ -13,6 +13,8 @@ public class  CategoryPersistenceTest {
 
     @Autowired
     private CategoryRepository repository;
+
+    // Error related to the database schema if any of the required fields are null
 
     @Test
     public void givenAnInvalidCategoryWithNullName_whenCallsSave_shouldReturnAnError() {

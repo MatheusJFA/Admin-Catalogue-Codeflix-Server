@@ -14,5 +14,4 @@ public interface CategoryGateway {
     Category update(Category category);
 
     Category deleteById(CategoryID id);
-
 }

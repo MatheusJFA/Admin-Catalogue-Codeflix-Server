@@ -11,10 +11,12 @@ import org.matheusjfa.codeflix.administrator.catalogue.infrastructure.utils.Spec
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 import java.util.Optional;
 
+@Service
 public class CategoryMySQLGateway implements CategoryGateway {
     private final CategoryRepository repository;
 
