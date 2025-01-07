@@ -15,6 +15,7 @@ import java.util.List;
 
 @IntegrationTest
 public class ListCategoriesUseCaseIT {
+
     @Autowired
     private ListCategoriesUseCase useCase;
 
