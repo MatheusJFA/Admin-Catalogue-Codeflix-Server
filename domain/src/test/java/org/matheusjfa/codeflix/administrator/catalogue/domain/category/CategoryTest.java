@@ -229,6 +229,8 @@ public class CategoryTest {
 
         final var updatedAt = category.getUpdatedAt();
 
+        sleep(200);
+
         // Act
         final var updatedCategory = category.update(expectedName, expectedDescription, expectedIsActive);
 
@@ -251,6 +253,8 @@ public class CategoryTest {
         final var expectedIsActive = true;
 
         final var updatedAt = category.getUpdatedAt();
+
+        sleep(200);
 
         // Act
         final var updatedCategory = category.update(expectedName, expectedDescription, expectedIsActive);
@@ -276,6 +280,8 @@ public class CategoryTest {
 
         final var updatedAt = category.getUpdatedAt();
 
+        sleep(200);
+
         // Act
         final var updatedCategory = category.update(expectedName, expectedDescription, expectedIsActive);
 
@@ -286,5 +292,13 @@ public class CategoryTest {
         Assertions.assertNotNull(category.getUpdatedAt());
         Assertions.assertNotNull(category.getDeletedAt());
         Assertions.assertTrue(updatedAt.isBefore(updatedCategory.getUpdatedAt()));
+    }
+
+    private void sleep(final long milliSeconds) {
+        try {
+            Thread.sleep(milliSeconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
