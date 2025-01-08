@@ -137,12 +137,6 @@ public class ListCategoriesUseCaseIT {
         final var expectedTotalElements = 1;
         final var expectedTotalPages = 1;
 
-        Assertions.assertEquals(0, this.repository.count());
-
-        this.createCategories();
-
-        Assertions.assertEquals(8, this.repository.count());
-
         final var query = new CategorySearchQuery(0, 3, "Ah, Horror Movies!", "description", "asc");
         final var command = ListCategoriesCommand.with(query);
         // Act
@@ -169,12 +163,6 @@ public class ListCategoriesUseCaseIT {
         final var expectedSize = 3;
         final var expectedTotalElements = 0;
         final var expectedTotalPages = 0;
-
-        Assertions.assertEquals(0, this.repository.count());
-
-        this.createCategories();
-
-        Assertions.assertEquals(8, this.repository.count());
 
         final var query = new CategorySearchQuery(0, 3, "Invalid", "name", "asc");
         final var command = ListCategoriesCommand.with(query);
