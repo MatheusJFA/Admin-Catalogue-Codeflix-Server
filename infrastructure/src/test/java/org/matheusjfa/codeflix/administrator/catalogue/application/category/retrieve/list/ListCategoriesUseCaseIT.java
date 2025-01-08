@@ -120,7 +120,6 @@ public class ListCategoriesUseCaseIT {
         final var command = ListCategoriesCommand.with(query);
         // Act
         final var result = useCase.execute(command);
-        System.out.println(result);
 
         // Assert
         Assertions.assertNotNull(result);
