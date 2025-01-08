@@ -1,4 +1,4 @@
-package org.matheusjfa.codeflix.administrator.catalogue.infrastructure.configuration.useCases;
+package org.matheusjfa.codeflix.administrator.catalogue.infrastructure.configuration.usecases;
 
 import org.matheusjfa.codeflix.administrator.catalogue.application.category.create.CreateCategoryUseCase;
 import org.matheusjfa.codeflix.administrator.catalogue.application.category.create.DefaultCreateCategoryUseCase;
@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class CategoryUseCaseConfiguration {
-
     private final CategoryGateway gateway;
 
     public CategoryUseCaseConfiguration(final CategoryGateway gateway) {

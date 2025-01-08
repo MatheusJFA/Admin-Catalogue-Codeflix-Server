@@ -1,12 +1,11 @@
 package org.matheusjfa.codeflix.administrator.catalogue.infrastructure.category;
 
-import org.hibernate.annotations.NotFound;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.matheusjfa.codeflix.administrator.catalogue.domain.category.Category;
 import org.matheusjfa.codeflix.administrator.catalogue.domain.category.CategoryID;
 import org.matheusjfa.codeflix.administrator.catalogue.domain.category.CategorySearchQuery;
-import org.matheusjfa.codeflix.administrator.catalogue.infrastructure.MySQLGatewayTest;
+import org.matheusjfa.codeflix.administrator.catalogue.MySQLGatewayTest;
 import org.matheusjfa.codeflix.administrator.catalogue.infrastructure.category.persistence.CategoryJPAEntity;
 import org.matheusjfa.codeflix.administrator.catalogue.infrastructure.category.persistence.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
